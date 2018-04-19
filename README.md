@@ -1,3 +1,10 @@
+Ссылки
+======
+* Google Cloud Functions проект [https://console.cloud.google.com/functions/list?project=masterclass-chatbots](https://console.cloud.google.com/functions/list?project=masterclass-chatbots)
+* Dialog Flow Console [https://console.dialogflow.com/api-client](https://console.dialogflow.com/api-client)
+* Презентация [https://docs.google.com/presentation/d/1aN87tZA0tOKu7tNcAqhaWFQIdvGY_s2Fvz_lUDNGWu0](https://docs.google.com/presentation/d/1aN87tZA0tOKu7tNcAqhaWFQIdvGY_s2Fvz_lUDNGWu0)
+
+
 Содержание
 =================
 
