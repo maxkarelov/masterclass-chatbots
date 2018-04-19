@@ -162,16 +162,14 @@
 
 ## 7 Настройка веб хука
 ### 7.1 Создать новую функцию вебхук по аналогии функцией обработчиком
+### 7.2 Скопировать содержимое webhook/webhook.js и webhook/package.json в редактор и подеплоить cloud function
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_1.png)
 
-### 7.2 Скопировать содержимое webhook/webhook.js и webhook/package.json в редактор и подеплоить cloud function
+### 7.3 Открыть настройки fulfillment и включить webhook
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_2.png)
 
-### 7.3 Открыть настройки fulfillment и включить webhook
+### 7.4 Включить web demo интеграцию
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_3.png)
 
-### 7.5 Включить web demo интеграцию
+### 7.5 Протестировать бота
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_4.png)
-
-### 7.6 Протестировать бота
-![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_5.png)
