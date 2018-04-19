@@ -48,3 +48,73 @@
 
 ### 3.3 Добавить содержимое файлов bot/botHandler.js и bot/package.json. Скопировать адрес HTTP функции
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_function_3.png)
+
+## 4 Создание агента
+### 4.1 Нажать создать агента
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_agent_1.png)
+
+### 4.2 Выбрать название
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_agent_2.png)
+
+### 4.3 Выбрать язык
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_agent_3.png)
+
+### 4.4 Нажать "создать"
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_agent_4.png)
+
+## 5 Создание сущности
+### 5.1 Нажать создать сущность
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_1.png)
+
+### 5.2 Указать название сущности
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_2.png)
+
+### 5.3 Переключится в сырой режим
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_3.png)
+
+### 5.4 Добавить CSV с возможными жанрами из datasets/genres.csv
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_4.png)
+
+### 5.5 Сохранить сущность
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_5.png)
+
+## 6 Создание интента
+### 6.1 Нажать создать интент
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_1.png)
+
+### 6.2 Выбрать название
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_2.png)
+
+### 6.3 Добавить параметры
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_3.png)
+
+### 6.4 Указать название action и добавить опциональный параметр - жанр
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_4.png)
+
+### 6.5 Добавить обязательный параметр - дата, используя системную сущность \@sys.date
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_5.png)
+
+### 6.6 Придумать и добавить размеченные фразы для обучения модели
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_6.png)
+
+### 6.7 Включить fulfillment
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_7.png)
+
+### 6.8 Включить веб хук
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_8.png)
+
+### 6.9 Сохранить интент
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_9.png)
+
+## 7 Настройка веб хука
+### 7.1 Открыть настройки fulfillment
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_1.png)
+
+### 7.2 Включить встроенный редактор
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_2.png)
+
+### 7.3 Скопировать содержимое webhook/webhook.js и webhook/package.json в редактор и подеплоить cloud function
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_3.png)
+
+### 7.4 Включить web demo интеграцию и протестировать бота
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_4.png)
