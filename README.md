@@ -107,7 +107,7 @@
 ### 4.1 Нажать создать агента
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_agent_1.png)
 
-### 4.2 Выбрать название
+### 4.2 Выбрать название и указать google cloud project: masterclass-chatbots
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_agent_2.png)
 
 ### 4.3 Выбрать язык
@@ -173,3 +173,12 @@
 
 ### 7.5 Протестировать бота
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_4.png)
+
+## 8 Интеграция vk и dialogflow
+### 8.1 Скопировать project-id dialogflow агента
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/integrate_1.png)
+
+### 8.2 Отредактировать функцию botHandler
+#### 8.2.1 Указать DF_PROJECT_ID
+#### 8.2.2 Заменить echoMessage(user_id, message) на handleMessage(user_id, message)
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/integrate_2.png)
