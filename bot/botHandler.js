@@ -18,10 +18,11 @@ const VK_API_VERSION = '5.74';
 
 const MESSAGE_NEW = 'message_new';
 const CONFIRMATION = 'confirmation';
+const DF_PROJECT_ID = '<REPLACE>';
 
 handleMessage = (user_id, mess, functionContext) => {
   const sessionClient = new dialogflow.SessionsClient();
-  const sessionPath = sessionClient.sessionPath("masterclass-chatbots", "1");
+  const sessionPath = sessionClient.sessionPath(DF_PROJECT_ID, "1");
   let _request = {
     session: sessionPath,
     queryInput: {
@@ -54,7 +55,8 @@ echoMessage = (user_id, mess, functionContext) => {
 }
 
 renderUrl = (user_id, message) => {
-  return `${VK_MESSAGE_API}?access_token=${VK_ACCESS_TOKEN}&user_id=${user_id}&message=${encodeURIComponent(message)}&v=${VK_API_VERSION}`;
+  return
+    `${VK_MESSAGE_API}?access_token=${VK_ACCESS_TOKEN}&user_id=${user_id}&message=${encodeURIComponent(message)}&v=${VK_API_VERSION}`;
 }
 
 
