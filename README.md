@@ -3,10 +3,7 @@
 * Google Cloud Functions проект [https://console.cloud.google.com/functions/list?project=masterclass-chatbots](https://console.cloud.google.com/functions/list?project=masterclass-chatbots)
 * Dialog Flow Console [https://console.dialogflow.com/api-client](https://console.dialogflow.com/api-client)
 * Презентация [https://docs.google.com/presentation/d/1aN87tZA0tOKu7tNcAqhaWFQIdvGY_s2Fvz_lUDNGWu0](https://docs.google.com/presentation/d/1aN87tZA0tOKu7tNcAqhaWFQIdvGY_s2Fvz_lUDNGWu0)
-* Hangouts [Hangouts](https://hangouts.google.com/call/Y5nlCvXNt2fMI54f8mh5AAEI)
-
-Service Account: masterclass-chatbots@appspot.gserviceaccount.com
-Role: Dialogflow API Client
+* Hangouts [https://hangouts.google.com/call/Y5nlCvXNt2fMI54f8mh5AAEI](https://hangouts.google.com/call/Y5nlCvXNt2fMI54f8mh5AAEI)
 
 Содержание
 =================
