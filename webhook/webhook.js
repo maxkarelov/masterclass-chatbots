@@ -60,6 +60,37 @@ exports.webhook = (request, response) => {
     });
   }
 
+  function getDuration() {
+    let params = request.body.queryResult.parameters;
+
+    let film = params.films;
+    console.log(film);
+
+    var url =
+      "https://us-central1-masterclass-chatbots.cloudfunctions.net/function-2/movies";
+    url += "?title=" + querystring.escape(film);
+    console.log(url);
+    https.get(url, (resp) => {
+      let data = '';
+      resp.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      resp.on('end', () => {
+        let body = JSON.parse(data);
+        console.log(body);
+        let lengths = body.movies.map(movie =>
+          movie.duration)
+        if (lengths.length > 0) {
+          send(lengths[0] + " минут");
+        } else {
+          send("Таких фильмов нет");
+        }
+      });
+    });
+  }
+
+
   function send(message) {
     response.send({
       "fulfillmentText": message
@@ -68,5 +99,7 @@ exports.webhook = (request, response) => {
 
   if (request.body.queryResult.action == "list-films") {
     listFilms();
+  } else if (request.body.queryResult.action == "ask-duration") {
+    getDuration();
   }
 };

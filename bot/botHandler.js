@@ -19,13 +19,10 @@ const VK_API_VERSION = '5.74';
 const MESSAGE_NEW = 'message_new';
 const CONFIRMATION = 'confirmation';
 
-// TODO: Заменить <REPLACE> на project id своего агента в dialogflow
-const DF_PROJECT_ID = '<PROJECT_NAME>';
-
-handleMessage = (user_id, mess) => {
+handleMessage = (user_id, mess, functionContext) => {
   const sessionClient = new dialogflow.SessionsClient();
-  const sessionPath = sessionClient.sessionPath(DF_PROJECT_ID, "1");
-  let request = {
+  const sessionPath = sessionClient.sessionPath("masterclass-chatbots", "1");
+  let _request = {
     session: sessionPath,
     queryInput: {
       text: {
@@ -34,30 +31,30 @@ handleMessage = (user_id, mess) => {
       }
     }
   }
-  sessionClient.detectIntent(request).then(responses => {
+  sessionClient.detectIntent(_request).then(responses => {
     const response = responses[0];
-    request.get(renderUrl(user_id, response.queryResult), function(error,
-      res,
-      body) {
-      console.log('statusCode:', res && res.statusCode);
-      res.status(200).send('ok');
-    });
+    request.get(renderUrl(user_id, response.queryResult.fulfillmentText),
+      function(error,
+        res,
+        body) {
+        console.log('statusCode:', res && res.statusCode);
+        functionContext.status(200).send('ok');
+      });
   });
 }
 
-echoMessage = (user_id, mess) => {
+echoMessage = (user_id, mess, functionContext) => {
   request.get(renderUrl(user_id, `ответ бота: ${mess}`),
     function(error,
       res,
       body) {
       console.log('statusCode:', res && res.statusCode);
-      res.status(200).send('ok');
+      functionContext.status(200).send('ok');
     });
 }
 
 renderUrl = (user_id, message) => {
-  return
-    `${VK_MESSAGE_API}?access_token=${VK_ACCESS_TOKEN}&user_id=${user_id}&message=${encodeURIComponent(message)}&v=${VK_API_VERSION}`;
+  return `${VK_MESSAGE_API}?access_token=${VK_ACCESS_TOKEN}&user_id=${user_id}&message=${encodeURIComponent(message)}&v=${VK_API_VERSION}`;
 }
 
 
@@ -70,7 +67,7 @@ exports.botHandler = (req, res) => {
     const user_id = req.body.object.user_id;
     const message = req.body.object.body;
 
-    echoMessage(user_id, message);
+    handleMessage(user_id, message, res);
   } else {
     res.status(400).send('invalid request');
   }

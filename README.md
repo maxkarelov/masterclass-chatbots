@@ -107,7 +107,7 @@
 ### 4.1 Нажать создать агента
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_agent_1.png)
 
-### 4.2 Выбрать название и указать google cloud project: masterclass-chatbots
+### 4.2 Выбрать название
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_agent_2.png)
 
 ### 4.3 Выбрать язык
