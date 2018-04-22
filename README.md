@@ -3,57 +3,66 @@
 * Google Cloud Functions проект [https://console.cloud.google.com/functions/list?project=masterclass-chatbots](https://console.cloud.google.com/functions/list?project=masterclass-chatbots)
 * Dialog Flow Console [https://console.dialogflow.com/api-client](https://console.dialogflow.com/api-client)
 * Презентация [https://docs.google.com/presentation/d/1aN87tZA0tOKu7tNcAqhaWFQIdvGY_s2Fvz_lUDNGWu0](https://docs.google.com/presentation/d/1aN87tZA0tOKu7tNcAqhaWFQIdvGY_s2Fvz_lUDNGWu0)
+* Hangouts [Hangouts](https://hangouts.google.com/call/Y5nlCvXNt2fMI54f8mh5AAEI)
 
+Service Account: masterclass-chatbots@appspot.gserviceaccount.com
+Role: Dialogflow API Client
 
 Содержание
 =================
-
-1. [Создание группы](#1-Cоздание-группы)
-   * [Нажать создать группу](#11-Нажать-создать-группу)
-   * [Выбрать тип группы](#12-Выбрать-тип-группы)
-   * [Добавить название](#13-Добавить-название)
-2. [Настройка группы](#2-Настройка-группы)
-   * [Перейти в управление сообществом](#21-Перейти-в-Управление-сообществом)
-   * [Перейти в "Работа с API"](#22-Перейти-в-Работа-с-api)
-   * [Создать "Ключ доступа"](#23-Создать-Ключ-достапа)
-   * [Скопировать](#24-Скопировать-на-будущее)
-   * [Перейти во вкладку "Callback API"](#25-Перейти-во-вкладку-callback-api)
-   * [Выбрать "Тип событий" - "Входящие сообщения"](#26-Выбрать-тип-событий---Входящие-сообщения)
-   * [Выбрать любой "Секретный ключ"](#27-Выбрать-любой-Секретный-ключ-Например-12345)
-   * [Вставить адрес HTTP Webhook бота из шага 3.3](#28-Вставить-адрес-http-webhook-бота-из-шага-33)
-   * [Включить "Сообщения" в группе](#29-Включить-Сообщения-в-группе)
-3. [Создание функции обработчика](#3-Cоздание-функции-обработчика)
-   * [Нажать создать функцию](#31-Нажать-создать-функцию)
-   * [Выбрать название](#32-Выбрать-название)
-   * [Добавить содержимое файлов bot/botHandler.js и bot/package.json]()
-4. [Создание агента](#4-Создание-агента)
-   * [Нажать создать агента](#41-Нажать-создать-агента)
-   * [Выбрать название](#42-Выбрать-название)
-   * [Выбрать язык](#43-Выбрать-язык)
-   * [Нажать "Создать"](#44-Нажать-Создать)
-5. [Создание сущностей](#5-Создание-сущностей)   
-   * [Нажать создать сущность](#51-Нажать-создать-сущность)
-   * [Указать название](#52-Указать-название)
-   * [Переключиться в raw режим](#53-Переключиться-в-сырой-режим)
-   * [Добавить CSV с жанрами из datasets/genres.csv]()
-   * [Сохранить сущность](#55-Сохранить-сущность)
-6. [Создание интента](#6-Создание-интента)   
-   * [Нажать создать интент](#61-Нажать-создать-интент)
-   * [Выбрать название](#62-Выбрать-название)
-   * [Добавить параметры](#63-Добавить-параметры)
-   * [Указать название action и добавить опциональный параметр - жанр](#64-Указать-название)
-   * [Добавить обязательный параметр - дата, используя ситемную сущность \@sys.date]()
-   * [Придумать и добавить размеченные фразы для обучения модели](#66-Придумать-и-добавить-размеченные-фразы-для-обучения-модели)
-   * [Включить fulfillment](#67-Включить-fulfillment)
-   * [Включить веб хук](#68-Включить-веб-хук)
-   * [Сохранить интент](#69-Сохранить-интент)
-7. [Настройка веб-хука](#7-настройка-веб-хука)
-   * [Открыть настройки Fulfillment](#71-Открыть-настройки-Fulfillment)
-   * [Включить встроенный редактор](#72-Включить-встроенный-редактор)
-   * [Скопировать содержимое webhook/webhook.js и webhook/package.json в редактор и подеплоить cloud function]()
-   * [Включить web demo интеграцию и протестировать бота](#73-Включить-web-demo-интеграцию-и-протестировать-бота)
-8. [Потестировать бота!]()
-
+- [1 Создание группы](#1-Создание-группы)
+	- [1.1 Нажать создать группу](#11-Нажать-создать-группу)
+	- [1.2 Выбрать тип группы](#12-Выбрать-тип-группы)
+	- [1.3 Добавить название](#13-Добавить-название)
+- [2 Настройка группы](#2-Настройка-группы)
+	- [2.1 Перейти в "Управление сообществом"](#21-Перейти-в-"Управление-сообществом")
+	- [2.2 Перейти в "Работа с API"](#22-Перейти-в-Работа-с-API)
+	- [2.3 Создать "Ключ доступа"](#23-Создать-Ключ-доступа)
+	- [2.4 Скопировать на будущее](#24-Скопировать-на-будущее)
+	- [2.5 Перейти во вкладку "Callback API"](#25-Перейти-во-вкладку-Callback-API)
+	- [2.6 Выбрать "Тип событий" - "Входящие сообщения"](#26-Выбрать-Тип-событий---Входящие-сообщения)
+	- [2.7 Выбрать любой "Секретный ключ". Например "12345"](#27-Выбрать-любой-Секретный-ключ-Например-12345)
+	- [2.8 Вставить адрес HTTP Webhook бота из шага 3.3](#28-Вставить-адрес-HTTP-Webhook-бота-из-шага-33)
+	- [2.9 Включить "Сообщения" в группе](#29-Включить-Сообщения-в-группе)
+- [3 Создание функции обработчика](#3-Создание-функции-обработчика)
+	- [3.1 Нажать создать функцию](#31-Нажать-создать-функцию)
+	- [3.2 Выбрать название](#32-Выбрать-название)
+	- [3.3 Добавить содержимое файлов bot/botHandler.js и bot/package.json. Скопировать адрес HTTP функции](#33-Добавить-содержимое-файлов-botbotHandlerjs-и-botpackagejson-Скопировать-адрес-HTTP-функции)
+- [4 Создание агента](#4-Создание-агента)
+	- [4.1 Нажать создать агента](#41-Нажать-создать-агента)
+	- [4.2 Выбрать название](#42-Выбрать-название)
+	- [4.3 Выбрать язык](#43-Выбрать-язык)
+	- [4.4 Нажать "создать"](#44-Нажать-создать)
+- [5 Настройка доступа](#5-Настройка-доступа)
+	- [5.1 Открыть гугл клауд проект агента (кликнув по его названию в dialogflow) и открыть IAM](#51-Открыть-гугл-клауд-проект-агента-кликнув-по-его-названию-в-dialogflow-и-открыть-IAM)
+	- [5.2 Добавить наш сервис аккаунт masterclass-chatbots@appspot.gserviceaccount.com с ролью Dialogflow API Client в проект](#52-Добавить-наш-сервис-аккаунт-masterclass-chatbots@appspotgserviceaccountcom-с-ролью-Dialogflow-API-Client-в-проект)
+- [6 Создание сущности](#6-Создание-сущности)
+	- [6.1 Нажать создать сущность](#61-Нажать-создать-сущность)
+	- [6.2 Указать название сущности](#62-Указать-название-сущности)
+	- [6.3 Переключится в сырой режим](#63-Переключится-в-сырой-режим)
+	- [6.4 Добавить CSV с возможными жанрами из datasets/genres.csv](#64-Добавить-CSV-с-возможными-жанрами-из-datasetsgenrescsv)
+	- [6.5 Сохранить сущность](#65-Сохранить-сущность)
+- [7 Создание интента](#7-Создание-интента)
+	- [7.1 Нажать создать интент](#71-Нажать-создать-интент)
+	- [7.2 Выбрать название](#72-Выбрать-название)
+	- [7.3 Добавить параметры](#73-Добавить-параметры)
+	- [7.4 Указать название action и добавить опциональный параметр - жанр](#74-Указать-название-action-и-добавить-опциональный-параметр---жанр)
+	- [7.5 Добавить обязательный параметр - дата, используя системную сущность \@sys.date](#75-Добавить-обязательный-параметр---дата,-используя-системную-сущность-sysdate)
+	- [7.6 Придумать и добавить размеченные фразы для обучения модели](#76-Придумать-и-добавить-размеченные-фразы-для-обучения-модели)
+	- [7.7 Включить fulfillment](#77-Включить-fulfillment)
+	- [7.8 Включить веб хук](#78-Включить-веб-хук)
+	- [7.9 Сохранить интент](#79-Сохранить-интент)
+- [8 Настройка веб хука](#8-Настройка-веб-хука)
+	- [8.1 Создать новую функцию вебхук по аналогии функцией обработчиком](#81-Создать-новую-функцию-вебхук-по-аналогии-функцией-обработчиком)
+	- [8.2 Скопировать содержимое webhook/webhook.js и webhook/package.json в редактор и подеплоить cloud function](#82-Скопировать-содержимое-webhookwebhookjs-и-webhookpackagejson-в-редактор-и-подеплоить-cloud-function)
+	- [8.3 Открыть настройки fulfillment и включить webhook. Проставить в нем URL созданной функции-вебхука](#83-Открыть-настройки-fulfillment-и-включить-webhook-Проставить-в-нем-URL-созданной-функции-вебхука)
+	- [8.4 Включить web demo интеграцию](#84-Включить-web-demo-интеграцию)
+	- [8.5 Протестировать бота](#85-Протестировать-бота)
+- [9 Интеграция vk и dialogflow](#9-Интеграция-vk-и-dialogflow)
+	- [9.1 Скопировать project-id dialogflow агента](#91-Скопировать-project-id-dialogflow-агента)
+	- [9.2 Отредактировать функцию botHandler](#92-Отредактировать-функцию-botHandler)
+		- [9.2.1 Заменить echoMessage(user_id, message) на handleMessage(user_id, message)](#921-Заменить-echoMessageuser_id-message-на-handleMessageuser_id-message)
+		- [9.2.2 Указать свой DF_PROJECT_ID в botHandler.js](#922-Указать-свой-DF_PROJECT_ID-в-botHandlerjs)
 
 ## 1 Создание группы
 ### 1.1 Нажать создать группу
@@ -116,69 +125,77 @@
 ### 4.4 Нажать "создать"
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_agent_4.png)
 
-## 5 Создание сущности
-### 5.1 Нажать создать сущность
+
+## 5 Настройка доступа
+### 5.1 Открыть гугл клауд проект агента (кликнув по его названию в dialogflow) и открыть IAM
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/iam_1.png)
+
+### 5.2 Добавить наш сервис аккаунт masterclass-chatbots@appspot.gserviceaccount.com с ролью Dialogflow API Client в проект
+![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/iam_2.png)
+
+## 6 Создание сущности
+### 6.1 Нажать создать сущность
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_1.png)
 
-### 5.2 Указать название сущности
+### 6.2 Указать название сущности
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_2.png)
 
-### 5.3 Переключится в сырой режим
+### 6.3 Переключится в сырой режим
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_3.png)
 
-### 5.4 Добавить CSV с возможными жанрами из datasets/genres.csv
+### 6.4 Добавить CSV с возможными жанрами из datasets/genres.csv
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_4.png)
 
-### 5.5 Сохранить сущность
+### 6.5 Сохранить сущность
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_entity_5.png)
 
-## 6 Создание интента
-### 6.1 Нажать создать интент
+## 7 Создание интента
+### 7.1 Нажать создать интент
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_1.png)
 
-### 6.2 Выбрать название
+### 7.2 Выбрать название
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_2.png)
 
-### 6.3 Добавить параметры
+### 7.3 Добавить параметры
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_3.png)
 
-### 6.4 Указать название action и добавить опциональный параметр - жанр
+### 7.4 Указать название action и добавить опциональный параметр - жанр
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_4.png)
 
-### 6.5 Добавить обязательный параметр - дата, используя системную сущность \@sys.date
+### 7.5 Добавить обязательный параметр - дата, используя системную сущность \@sys.date
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_5.png)
 
-### 6.6 Придумать и добавить размеченные фразы для обучения модели
+### 7.6 Придумать и добавить размеченные фразы для обучения модели
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_6.png)
 
-### 6.7 Включить fulfillment
+### 7.7 Включить fulfillment
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_7.png)
 
-### 6.8 Включить веб хук
+### 7.8 Включить веб хук
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_8.png)
 
-### 6.9 Сохранить интент
+### 7.9 Сохранить интент
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_intent_9.png)
 
-## 7 Настройка веб хука
-### 7.1 Создать новую функцию вебхук по аналогии функцией обработчиком
-### 7.2 Скопировать содержимое webhook/webhook.js и webhook/package.json в редактор и подеплоить cloud function
+## 8 Настройка веб хука
+### 8.1 Создать новую функцию вебхук по аналогии функцией обработчиком
+### 8.2 Скопировать содержимое webhook/webhook.js и webhook/package.json в редактор и подеплоить cloud function
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_1.png)
 
-### 7.3 Открыть настройки fulfillment и включить webhook. Проставить в нем URL созданной функции-вебхука
+### 8.3 Открыть настройки fulfillment и включить webhook. Проставить в нем URL созданной функции-вебхука
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_2.png)
 
-### 7.4 Включить web demo интеграцию
+### 8.4 Включить web demo интеграцию
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_3.png)
 
-### 7.5 Протестировать бота
+### 8.5 Протестировать бота
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/create_webhook_4.png)
 
-## 8 Интеграция vk и dialogflow
-### 8.1 Скопировать project-id dialogflow агента
+## 9 Интеграция vk и dialogflow
+### 9.1 Скопировать project-id dialogflow агента
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/integrate_1.png)
 
-### 8.2 Отредактировать функцию botHandler
-#### 8.2.1 Указать DF_PROJECT_ID
-#### 8.2.2 Заменить echoMessage(user_id, message) на handleMessage(user_id, message)
+### 9.2 Отредактировать функцию botHandler
+#### 9.2.1 Заменить echoMessage(user_id, message) на handleMessage(user_id, message)
+#### 9.2.2 Указать свой DF_PROJECT_ID в botHandler.js
 ![](https://raw.githubusercontent.com/maxkarelov/masterclass-chatbots/master/docs/integrate_2.png)
